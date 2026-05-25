@@ -1,7 +1,8 @@
-# selenium_demo/urls.py 正确完整代码
-from django.urls import path
-from lists import views
+from django.urls import path, include
+from lists import views as list_views
+from lists import urls as list_urls
 
 urlpatterns = [
-    path('', views.home_page, name='home'),
+    path('', list_views.home_page, name='home'),
+    path('lists/', include(list_urls)),
 ]
